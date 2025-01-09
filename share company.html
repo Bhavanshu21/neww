@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Management</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0d1117;
+      color: #ffffff;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 60px; /* Reduced width by 70% */
+      background-color: #1D355A;
+      padding: 20px;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+    .sidebar a {
+      display: flex; /* Changed to flex for icon alignment */
+      align-items: center; /* Center align items */
+      color: #fff;
+      text-decoration: none;
+      margin-bottom: 10px;
+      padding: 5px; /* Adjusted padding */
+      border-radius: 5px;
+      transition: background 0.3s;
+      font-size: 12px; /* Adjusted font size */
+      justify-content: center; /* Center content horizontally */
+    }
+    .sidebar a img {
+      margin-right: 5px; /* Adjusted space between icon and text */
+      width: 24px; /* Increased icon size */
+      height: 24px; /* Increased icon size */
+      border-radius: 50%; /* Make the image circular */
+    }
+    .sidebar a:hover {
+      background-color: #3A7EFF;
+    }
+
+    .container {
+      background-color: #161b22;
+      border-radius: 10px;
+      padding: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+      width: 675px; /* Increased width by 50% to match table */
+      position: absolute;
+      top: 50px; /* Moved downwards by 30% */
+      left: 100px; /* Adjusted for sidebar */
+    }
+
+    .user-table {
+      width: 100%; /* Set width to 100% of the container */
+      border-collapse: collapse;
+      margin-bottom: 15px; /* Increased margin-bottom */
+    }
+
+    .user-table th,
+    .user-table td {
+      padding: 7.5px; /* Increased padding by 50% */
+      text-align: left;
+      font-size: 18px; /* Increased font size by 50% */
+      border-right: 1px solid #444c56; /* Added right border for partition */
+    }
+
+    .user-table th:last-child,
+    .user-table td:last-child {
+      border-right: none; /* Remove right border for the last column */
+    }
+
+    .user-table th {
+      color: #c9d1d9;
+      border-bottom: 1px solid #444c56;
+    }
+
+    .user-table tr {
+      transition: background 0.3s;
+    }
+
+    .user-table tr:hover {
+      background-color: #21262d;
+    }
+
+    .user-table td {
+      border-bottom: 1px solid #444c56;
+    }
+
+    .user-avatar {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      color: #fff;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-right: 5px;
+      font-size: 10px;
+    }
+
+    .user-avatar.R {
+      background-color: #0078d7;
+    }
+
+    .user-avatar.M {
+      background-color: #f1c40f;
+    }
+
+    .user-avatar.P {
+      background-color: #e74c3c;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .add-user-btn {
+      background-color: #ffffff;
+      color: rgb(0, 0, 0);
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 12px;
+      font-weight: bold; /* Make text bold */
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .add-user-btn:hover {
+      background-color: #2A6FEF;
+    }
+
+    .icon-btn {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    .icon-btn img {
+      width: 16px;
+      height: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .icon-btn img {
+        width: 12px; /* Adjusted icon size for smaller screens */
+        height: 12px; /* Adjusted icon size for smaller screens */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <a href="#">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/left.png" alt="Back">
+      <span style="display: none;">Back</span> <!-- Hide text for smaller sidebar -->
+    </a>
+    <div>
+      <a href="#">
+        <img src="path/to/profile-picture.jpg" alt="Profile"> <!-- Add path to profile picture -->
+        <span style="display: none;">Profile</span> <!-- Hide text for smaller sidebar -->
+      </a>
+    </div>
+  </div>
+  <div class="container">
+    <table class="user-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Designation</th>
+          <th>Email</th> <!-- Added new column -->
+          <th>Phone</th> <!-- Added new column -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div style="display: flex; align-items: center;">
+              <div class="user-avatar R">R</div>
+              Rajni Mishra
+            </div>
+          </td>
+          <td>Accountant</td>
+          <td>rajni@example.com</td> <!-- Added new data -->
+          <td>123-456-7890</td> <!-- Added new data -->
+        </tr>
+        <tr>
+          <td>
+            <div style="display: flex; align-items: center;">
+              <div class="user-avatar M">M</div>
+              Manoj Saxena
+            </div>
+          </td>
+          <td>Salesman</td>
+          <td>manoj@example.com</td> <!-- Added new data -->
+          <td>098-765-4321</td> <!-- Added new data -->
+        </tr>
+        <tr>
+          <td>
+            <div style="display: flex; align-items: center;">
+              <div class="user-avatar P">P</div>
+              Premnath Kushwaha
+            </div>
+          </td>
+          <td>Dispatcher</td>
+          <td>premnath@example.com</td> <!-- Added new data -->
+          <td>555-555-5555</td> <!-- Added new data -->
+        </tr>
+        <!-- Added new row -->
+        <tr>
+          <td>
+            <div style="display: flex; align-items: center;">
+              <div class="user-avatar A">A</div>
+              Anjali Sharma
+            </div>
+          </td>
+          <td>Manager</td>
+          <td>anjali@example.com</td>
+          <td>222-333-4444</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="button-container">
+      <button class="add-user-btn">Add User</button>
+      <div>
+        <button class="icon-btn delete">
+          <img src="delete.png" alt="Delete"> <!-- Replace with the new image path -->
+        </button>
+        <button class="icon-btn edit">
+          <img src="https://img.icons8.com/ios-filled/50/0078d7/edit--v1.png" alt="Edit">
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
