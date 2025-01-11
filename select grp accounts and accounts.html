@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accounts UI</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #001220;
+            color: #e0e1dd;
+            display: flex;
+        }
+
+        .sidebar {
+            width: 60px;
+            background-color: #112233;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 0;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            position: fixed; /* Fixed position */
+            left: 0; /* Positioned to the left side corner */
+            top: 0; /* Positioned to the top */
+            height: 100%; /* Full height */
+            justify-content: flex-end; /* Move buttons to the bottom */
+        }
+
+        .sidebar button {
+            background: none;
+            border: none;
+            margin: 20px 0;
+            cursor: pointer;
+        }
+
+        .sidebar button img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+
+        .container {
+            width: calc(100% - 60px);
+            margin: 20px auto;
+            background-color: #112233;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            margin-left: 80px; /* Adjust for sidebar */
+        }
+
+        .actions {
+            padding: 10px;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .actions button {
+            padding: 8px 15px;
+            background-color: #007bff;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .actions button:hover {
+            background-color: #0056b3;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            color: #e0e1dd;
+        }
+
+        thead {
+            background-color: #445566;
+        }
+
+        thead th {
+            padding: 10px;
+            text-align: left;
+            color: #e0e1dd;
+        }
+
+        tbody {
+            background-color: #112233;
+            max-height: 400px;
+            overflow-y: auto;
+            display: block;
+        }
+
+        tbody tr {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+            border-bottom: 1px solid #334455;
+        }
+
+        tbody tr:hover {
+            background-color: #223344;
+        }
+
+        tbody td {
+            padding: 10px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        tbody .profile-img {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #e0e1dd;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <button title="Back">
+            <img src="https://via.placeholder.com/30?text=<" alt="Back Button">
+        </button>
+        <button title="Profile">
+            <img src="https://via.placeholder.com/30" alt="Profile Button">
+        </button>
+    </div>
+    <div class="container">
+        <div class="actions">
+            <button>Add</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Account Name</th>
+                    <th>Master</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><span class="profile-img"></span> Robert Fox</td>
+                    <td>Customer</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><span class="profile-img"></span> Bessie Cooper</td>
+                    <td>Customer</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><span class="profile-img"></span> Eleanor Pena</td>
+                    <td>Customer</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><span class="profile-img"></span> Leslie Alexander</td>
+                    <td>Suppliers</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><span class="profile-img"></span> Jane Cooper</td>
+                    <td>Suppliers</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><span class="profile-img"></span> Annette Black</td>
+                    <td>Suppliers</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><span class="profile-img"></span> Cody Fisher</td>
+                    <td>Suppliers</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><span class="profile-img"></span> Marvin McKinney</td>
+                    <td>Assets</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
